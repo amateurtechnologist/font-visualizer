@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <style id="font"></style>
+  </head>
+  <body>
+    <form onchange="loadFont(event)">
+      <input accept="font/*" type="file" />
+      <p id="sample-text" contenteditable>Hi there</p>
+    </form>
+    <script>
+      const style = document.getElementById("font");
+      const output = document.getElementById("sample-text");
+      function loadFont(event) {
+        const file = event.target.files[0];
+        const url = URL.createObjectURL(file);
+        style.textContent = `
+          @font-face {
+            font-family: 'UserFont';
+            src: url('${url}');
+          }
+        `;
+        output.style.fontFamily = `'UserFont'`;
+      }
+    </script>
+  </body>
+</html>
