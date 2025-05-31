@@ -1,6 +1,6 @@
 <html>
   <body>
-    <input onchange="Array.from(event.target.value,c=>c.codePointAt().toString(16).padStart(4,'0')).join(' ')" id="text"/>
+    <input onchange="codepoints.innerHTML=Array.from(event.target.value,c=>c.codePointAt().toString(16).padStart(4,'0')).join(' ')" id="text"/>
     <select onchange="window.text.value=window.text.value.normalize(event.target.value)">
       <option value="NFC">C</option>
       <option value="NFD">D</option>
