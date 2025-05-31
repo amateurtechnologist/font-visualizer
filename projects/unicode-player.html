@@ -1,12 +1,14 @@
 <html>
   <body>
-    <input onchange="codepoints.value=Array.from(event.target.value,c=>c.codePointAt().toString(16).padStart(4,'0')).join(' ')" id="text"/>
-    <select onchange="window.text.value=window.text.value.normalize(event.target.value)">
-      <option value="NFC">C</option>
-      <option value="NFD">D</option>
-      <option value="NFKC">KC</option>
-      <option value="NFKD">KD</option>
-    </select>
-    <input id="codepoints" style="overflow-x:auto;" readonly/>
+    <form onchange="codepoints.value=Array.from(text.value,c=>c.codePointAt().toString(16).padStart(4,'0')).join(' ')">
+      <input id="text"/>
+      <select onchange="window.text.value=window.text.value.normalize(event.target.value)">
+        <option value="NFC">C</option>
+        <option value="NFD">D</option>
+        <option value="NFKC">KC</option>
+        <option value="NFKD">KD</option>
+      </select>
+      <input id="codepoints" style="overflow-x:auto;" readonly/>
+    </form>
   </body>
 </html>
