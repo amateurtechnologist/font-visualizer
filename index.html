@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <style>
+      html, body {
+        margin: 0;
+        height: 100%;
+        overflow: hidden;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+      select {
+        flex: 0 0 auto;
+        padding: 0.5em;
+      }
+      iframe {
+        flex: 1 1 auto;
+        border: none;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <select required onchange="viewer.src = `./projects/${event.target.value}.html`">
+      <option disabled selected></option>
+      <option value="font-visualizer">font visualizer</option>
+    </select>
+    <iframe id="viewer" src="about:blank"></iframe>
+  </body>
+</html>
