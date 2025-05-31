@@ -1,0 +1,11 @@
+<html>
+  <body>
+    <input id="text"/>
+    <select onchange="window.text.value=window.text.value.normalize(event.target.value)">
+      <option value="NFC">C</option>
+      <option value="NFD">D</option>
+      <option value="NFKC">KC</option>
+      <option value="NFKD">KD</option>
+    </select>
+  </body>
+</html>
